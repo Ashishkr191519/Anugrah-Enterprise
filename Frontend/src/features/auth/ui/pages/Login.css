@@ -1,0 +1,2232 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0d0f;
+}
+
+/* =========================================================
+   PORTAL
+========================================================= */
+
+.portal {
+  min-height: 100vh;
+
+  background-color: #0a0d0f;
+
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(148, 163, 184, 0.22) 1px,
+    transparent 1px
+  );
+
+  background-size: 16px 16px;
+
+  padding: 22px 30px;
+
+  font-family: "Inter", sans-serif;
+
+  color: #f1f5f9;
+
+  transition: 0.3s ease;
+}
+
+/* =========================================================
+   OUTER FRAME
+========================================================= */
+
+.portal-frame {
+  min-height: calc(100vh - 44px);
+
+  border: 10px solid #9ba3ad;
+
+  border-radius: 34px;
+
+  background: #080d10;
+
+  padding: 28px 30px 30px;
+
+  box-shadow: inset 0 0 0 1px #26333d;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.portal-header {
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid #1a2329;
+
+  padding: 0 10px 18px;
+}
+
+.portal-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  white-space: nowrap;
+}
+
+.header-dot {
+  width: 9px;
+  height: 9px;
+
+  background: #0ea5e9;
+
+  border-radius: 50%;
+
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.6);
+}
+
+.header-main {
+  color: #e0e3e7;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+}
+
+.header-divider {
+  color: #56616a;
+
+  margin-left: 8px;
+}
+
+.header-sub {
+  color: #64707a;
+
+  font-size: 12px;
+
+  letter-spacing: 0.03em;
+}
+
+/* =========================================================
+   DARK MODE BUTTON
+========================================================= */
+
+.dark-toggle {
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 9px 0 12px;
+
+  background: #222a30;
+
+  border: 1px solid #303940;
+
+  color: #e0e3e7;
+
+  cursor: pointer;
+
+  font-family: Georgia, serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.toggle-switch {
+  width: 45px;
+  height: 24px;
+
+  border-radius: 20px;
+
+  background: #0ea5e9;
+
+  padding: 3px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+}
+
+.toggle-circle {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+
+  color: #00344d;
+
+  border-radius: 50%;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.portal-content {
+  display: grid;
+
+  grid-template-columns: 1.15fr 1fr;
+
+  gap: 65px;
+
+  min-height: calc(100vh - 170px);
+
+  margin-top: 12px;
+}
+
+/* =========================================================
+   LEFT ENGINEERING PANEL
+========================================================= */
+
+.engineering-panel {
+  position: relative;
+
+  min-height: 880px;
+
+  padding: 35px 42px;
+
+  border: 1px solid #1b252b;
+
+  background-color: #080d10;
+
+  background-image:
+    linear-gradient(rgba(38, 51, 61, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 51, 61, 0.28) 1px, transparent 1px);
+
+  background-size: 48px 48px;
+}
+
+.coordinates,
+.blueprint-reference,
+.system-version {
+  position: absolute;
+
+  font-family: "JetBrains Mono", monospace;
+
+  color: #69747e;
+
+  font-size: 10px;
+
+  letter-spacing: 0.04em;
+}
+
+.coordinates {
+  top: 25px;
+  left: 25px;
+}
+
+.blueprint-reference {
+  top: 25px;
+  right: 30px;
+}
+
+.system-version {
+  right: 25px;
+  bottom: 24px;
+}
+
+/* =========================================================
+   COMPANY BRAND
+========================================================= */
+
+.company-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 10px;
+
+  margin-left: 2px;
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+
+  background: #f1f5f9;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #313b43;
+}
+
+.company-logo svg {
+  width: 40px;
+  height: 40px;
+}
+
+.company-brand h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 21px;
+
+  letter-spacing: 0.04em;
+
+  color: #e2e8f0;
+}
+
+.company-brand p {
+  margin: 3px 0 0;
+
+  font-family: Georgia, serif;
+
+  color: #0ea5e9;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   SYSTEM BADGE
+========================================================= */
+
+.system-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 60px;
+
+  padding: 6px 12px;
+
+  border: 1px solid #225b4b;
+
+  background: rgba(16, 185, 129, 0.08);
+
+  color: #4edea3;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.09em;
+}
+
+.green-dot {
+  width: 6px;
+  height: 6px;
+
+  background: #4edea3;
+
+  display: inline-block;
+
+  border-radius: 50%;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-heading {
+  margin-top: 31px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 4vw, 64px);
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -0.035em;
+
+  color: #f1f5f9;
+}
+
+.hero-heading .blue-text {
+  color: #0ea5e9;
+}
+
+.hero-description {
+  margin-top: 26px;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  color: #aab4be;
+
+  max-width: 600px;
+}
+
+/* =========================================================
+   TELEMETRY CARD
+========================================================= */
+
+.telemetry-card {
+  width: 76%;
+
+  margin-top: 34px;
+
+  background: #151b1f;
+
+  border: 1px solid #26333d;
+
+  padding: 17px 18px 8px;
+}
+
+.telemetry-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+}
+
+.telemetry-header span {
+  color: #7f8992;
+}
+
+.telemetry-header strong {
+  color: #4edea3;
+
+  font-weight: 600;
+}
+
+.graph-wrapper {
+  height: 75px;
+
+  margin-top: 6px;
+}
+
+.telemetry-graph {
+  width: 100%;
+
+  height: 100%;
+}
+
+/* =========================================================
+   TECHNICAL TAGS
+========================================================= */
+
+.technical-tags {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-top: 78px;
+}
+
+.tech-tag {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 14px;
+
+  background: #20272c;
+
+  border: 1px solid #303b43;
+
+  color: #b8c2cc;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
+}
+
+.tag-icon {
+  font-size: 14px;
+
+  width: 16px;
+
+  text-align: center;
+}
+
+.water-icon,
+.blue-icon {
+  color: #89ceff;
+}
+
+.green-icon {
+  color: #4edea3;
+}
+
+/* =========================================================
+   RIGHT LOGIN AREA
+========================================================= */
+
+.login-section {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 30px 45px 20px 0;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   STATE TABS
+========================================================= */
+
+.state-tabs {
+  width: 100%;
+
+  height: 44px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  background: #282e33;
+
+  margin-bottom: 24px;
+}
+
+.state-tabs button {
+  border: none;
+
+  background: transparent;
+
+  color: #929aa2;
+
+  font-family: Georgia, serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.03em;
+
+  cursor: pointer;
+}
+
+.state-tabs button.active {
+  margin: 7px;
+
+  background: #0ea5e9;
+
+  color: #001e2f;
+}
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.login-card {
+  width: 100%;
+
+  background: #181d21;
+
+  border: 1px solid #242d33;
+
+  border-radius: 7px;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.security-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 38px 40px 0;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
+}
+
+.security-row span {
+  color: #7d8992;
+}
+
+.security-row strong {
+  color: #4edea3;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   LOGIN HEADING
+========================================================= */
+
+.login-heading {
+  padding: 40px 40px 25px;
+}
+
+.login-heading h1 {
+  margin: 0;
+
+  color: #e6e8eb;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 35px;
+
+  line-height: 1;
+
+  letter-spacing: -0.02em;
+}
+
+.login-heading p {
+  margin: 10px 0 0;
+
+  color: #a5afb8;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.login-card form {
+  padding: 0 40px 32px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #aeb7bf;
+
+  font-family: Georgia, serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+}
+
+.form-group label span {
+  color: #89ceff;
+}
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-wrapper {
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  background: #090e11;
+
+  border: 1px solid #172127;
+
+  transition: border 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: #0ea5e9;
+}
+
+.input-icon {
+  width: 47px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #7e8b95;
+}
+
+.input-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.input-wrapper input {
+  flex: 1;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #f1f5f9;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 12px;
+}
+
+.input-wrapper input::placeholder {
+  color: #69757f;
+}
+
+.password-toggle {
+  width: 45px;
+
+  height: 100%;
+
+  border: none;
+
+  background: transparent;
+
+  color: #7e8b95;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.password-toggle svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* =========================================================
+   FORM OPTIONS
+========================================================= */
+
+.form-options {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 3px;
+
+  margin-bottom: 23px;
+}
+
+.remember {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #9ba5ad;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.remember input {
+  display: none;
+}
+
+.custom-checkbox {
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #080d10;
+
+  border: 1px solid #35414a;
+
+  color: #fff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.remember input:not(:checked) + .custom-checkbox {
+  color: transparent;
+}
+
+.forgot-password {
+  border: none;
+
+  background: transparent;
+
+  color: #7eb9dc;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   SIGN IN BUTTON
+========================================================= */
+
+.sign-in-button {
+  width: 100%;
+
+  height: 50px;
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+  /* =========================================================
+   ROOT
+========================================================= */
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #0a0d0f;
+  }
+
+  /* =========================================================
+   PORTAL
+========================================================= */
+
+  .portal {
+    min-height: 100vh;
+
+    background-color: #0a0d0f;
+
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(148, 163, 184, 0.22) 1px,
+      transparent 1px
+    );
+
+    background-size: 16px 16px;
+
+    padding: 22px 30px;
+
+    font-family: "Inter", sans-serif;
+
+    color: #f1f5f9;
+
+    transition: 0.3s ease;
+  }
+
+  /* =========================================================
+   OUTER FRAME
+========================================================= */
+
+  .portal-frame {
+    min-height: calc(100vh - 44px);
+
+    border: 10px solid #9ba3ad;
+
+    border-radius: 34px;
+
+    background: #080d10;
+
+    padding: 28px 30px 30px;
+
+    box-shadow: inset 0 0 0 1px #26333d;
+
+    position: relative;
+
+    overflow: hidden;
+  }
+
+  /* =========================================================
+   HEADER
+========================================================= */
+
+  .portal-header {
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #1a2329;
+
+    padding: 0 10px 18px;
+  }
+
+  .portal-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-family: "JetBrains Mono", monospace;
+
+    white-space: nowrap;
+  }
+
+  .header-dot {
+    width: 9px;
+    height: 9px;
+
+    background: #0ea5e9;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 8px rgba(14, 165, 233, 0.6);
+  }
+
+  .header-main {
+    color: #e0e3e7;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+  }
+
+  .header-divider {
+    color: #56616a;
+
+    margin-left: 8px;
+  }
+
+  .header-sub {
+    color: #64707a;
+
+    font-size: 12px;
+
+    letter-spacing: 0.03em;
+  }
+
+  /* =========================================================
+   DARK MODE BUTTON
+========================================================= */
+
+  .dark-toggle {
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 9px 0 12px;
+
+    background: #222a30;
+
+    border: 1px solid #303940;
+
+    color: #e0e3e7;
+
+    cursor: pointer;
+
+    font-family: Georgia, serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+  }
+
+  .toggle-switch {
+    width: 45px;
+    height: 24px;
+
+    border-radius: 20px;
+
+    background: #0ea5e9;
+
+    padding: 3px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+  }
+
+  .toggle-circle {
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    color: #00344d;
+
+    border-radius: 50%;
+
+    font-size: 13px;
+  }
+
+  /* =========================================================
+   MAIN
+========================================================= */
+
+  .portal-content {
+    display: grid;
+
+    grid-template-columns: 1.15fr 1fr;
+
+    gap: 65px;
+
+    min-height: calc(100vh - 170px);
+
+    margin-top: 12px;
+  }
+
+  /* =========================================================
+   LEFT ENGINEERING PANEL
+========================================================= */
+
+  .engineering-panel {
+    position: relative;
+
+    min-height: 880px;
+
+    padding: 35px 42px;
+
+    border: 1px solid #1b252b;
+
+    background-color: #080d10;
+
+    background-image:
+      linear-gradient(rgba(38, 51, 61, 0.28) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(38, 51, 61, 0.28) 1px, transparent 1px);
+
+    background-size: 48px 48px;
+  }
+
+  .coordinates,
+  .blueprint-reference,
+  .system-version {
+    position: absolute;
+
+    font-family: "JetBrains Mono", monospace;
+
+    color: #69747e;
+
+    font-size: 10px;
+
+    letter-spacing: 0.04em;
+  }
+
+  .coordinates {
+    top: 25px;
+    left: 25px;
+  }
+
+  .blueprint-reference {
+    top: 25px;
+    right: 30px;
+  }
+
+  .system-version {
+    right: 25px;
+    bottom: 24px;
+  }
+
+  /* =========================================================
+   COMPANY BRAND
+========================================================= */
+
+  .company-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 10px;
+
+    margin-left: 2px;
+  }
+
+  .company-logo {
+    width: 50px;
+    height: 50px;
+
+    background: #f1f5f9;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #313b43;
+  }
+
+  .company-logo svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .company-brand h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 21px;
+
+    letter-spacing: 0.04em;
+
+    color: #e2e8f0;
+  }
+
+  .company-brand p {
+    margin: 3px 0 0;
+
+    font-family: Georgia, serif;
+
+    color: #0ea5e9;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+  }
+
+  /* =========================================================
+   SYSTEM BADGE
+========================================================= */
+
+  .system-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 60px;
+
+    padding: 6px 12px;
+
+    border: 1px solid #225b4b;
+
+    background: rgba(16, 185, 129, 0.08);
+
+    color: #4edea3;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.09em;
+  }
+
+  .green-dot {
+    width: 6px;
+    height: 6px;
+
+    background: #4edea3;
+
+    display: inline-block;
+
+    border-radius: 50%;
+  }
+
+  /* =========================================================
+   HERO
+========================================================= */
+
+  .hero-heading {
+    margin-top: 31px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(48px, 4vw, 64px);
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -0.035em;
+
+    color: #f1f5f9;
+  }
+
+  .hero-heading .blue-text {
+    color: #0ea5e9;
+  }
+
+  .hero-description {
+    margin-top: 26px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #aab4be;
+
+    max-width: 600px;
+  }
+
+  /* =========================================================
+   TELEMETRY CARD
+========================================================= */
+
+  .telemetry-card {
+    width: 76%;
+
+    margin-top: 34px;
+
+    background: #151b1f;
+
+    border: 1px solid #26333d;
+
+    padding: 17px 18px 8px;
+  }
+
+  .telemetry-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.08em;
+  }
+
+  .telemetry-header span {
+    color: #7f8992;
+  }
+
+  .telemetry-header strong {
+    color: #4edea3;
+
+    font-weight: 600;
+  }
+
+  .graph-wrapper {
+    height: 75px;
+
+    margin-top: 6px;
+  }
+
+  .telemetry-graph {
+    width: 100%;
+
+    height: 100%;
+  }
+
+  /* =========================================================
+   TECHNICAL TAGS
+========================================================= */
+
+  .technical-tags {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-top: 78px;
+  }
+
+  .tech-tag {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 14px;
+
+    background: #20272c;
+
+    border: 1px solid #303b43;
+
+    color: #b8c2cc;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+  }
+
+  .tag-icon {
+    font-size: 14px;
+
+    width: 16px;
+
+    text-align: center;
+  }
+
+  .water-icon,
+  .blue-icon {
+    color: #89ceff;
+  }
+
+  .green-icon {
+    color: #4edea3;
+  }
+
+  /* =========================================================
+   RIGHT LOGIN AREA
+========================================================= */
+
+  .login-section {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 30px 45px 20px 0;
+
+    min-width: 0;
+  }
+
+  /* =========================================================
+   STATE TABS
+========================================================= */
+
+  .state-tabs {
+    width: 100%;
+
+    height: 44px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    background: #282e33;
+
+    margin-bottom: 24px;
+  }
+
+  .state-tabs button {
+    border: none;
+
+    background: transparent;
+
+    color: #929aa2;
+
+    font-family: Georgia, serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.03em;
+
+    cursor: pointer;
+  }
+
+  .state-tabs button.active {
+    margin: 7px;
+
+    background: #0ea5e9;
+
+    color: #001e2f;
+  }
+
+  /* =========================================================
+   LOGIN CARD
+========================================================= */
+
+  .login-card {
+    width: 100%;
+
+    background: #181d21;
+
+    border: 1px solid #242d33;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+  }
+
+  .security-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 38px 40px 0;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+  }
+
+  .security-row span {
+    color: #7d8992;
+  }
+
+  .security-row strong {
+    color: #4edea3;
+
+    font-size: 11px;
+  }
+
+  /* =========================================================
+   LOGIN HEADING
+========================================================= */
+
+  .login-heading {
+    padding: 40px 40px 25px;
+  }
+
+  .login-heading h1 {
+    margin: 0;
+
+    color: #e6e8eb;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 35px;
+
+    line-height: 1;
+
+    letter-spacing: -0.02em;
+  }
+
+  .login-heading p {
+    margin: 10px 0 0;
+
+    color: #a5afb8;
+
+    font-size: 14px;
+  }
+
+  /* =========================================================
+   FORM
+========================================================= */
+
+  .login-card form {
+    padding: 0 40px 32px;
+  }
+
+  .form-group {
+    margin-bottom: 22px;
+  }
+
+  .form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #aeb7bf;
+
+    font-family: Georgia, serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+  }
+
+  .form-group label span {
+    color: #89ceff;
+  }
+
+  /* =========================================================
+   INPUT
+========================================================= */
+
+  .input-wrapper {
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #090e11;
+
+    border: 1px solid #172127;
+
+    transition: border 0.2s ease;
+  }
+
+  .input-wrapper:focus-within {
+    border-color: #0ea5e9;
+  }
+
+  .input-icon {
+    width: 47px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #7e8b95;
+  }
+
+  .input-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .input-wrapper input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #f1f5f9;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 12px;
+  }
+
+  .input-wrapper input::placeholder {
+    color: #69757f;
+  }
+
+  .password-toggle {
+    width: 45px;
+
+    height: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #7e8b95;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+  }
+
+  .password-toggle svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  /* =========================================================
+   FORM OPTIONS
+========================================================= */
+
+  .form-options {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 3px;
+
+    margin-bottom: 23px;
+  }
+
+  .remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #9ba5ad;
+
+    font-size: 12px;
+
+    cursor: pointer;
+  }
+
+  .remember input {
+    display: none;
+  }
+
+  .custom-checkbox {
+    width: 16px;
+    height: 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #080d10;
+
+    border: 1px solid #35414a;
+
+    color: #fff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+  }
+
+  .remember input:not(:checked) + .custom-checkbox {
+    color: transparent;
+  }
+
+  .forgot-password {
+    border: none;
+
+    background: transparent;
+
+    color: #7eb9dc;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+  }
+
+  /* =========================================================
+   SIGN IN BUTTON
+========================================================= */
+
+  .sign-in-button {
+    width: 100%;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    border: none;
+
+    background: #0ea5e9;
+
+    color: #001e2f;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease;
+  }
+
+  .sign-in-button:hover {
+    background: #0284c7;
+  }
+
+  .sign-in-button:active {
+    transform: translateY(1px);
+  }
+
+  .arrow {
+    font-size: 20px;
+
+    line-height: 0;
+  }
+
+  /* =========================================================
+   REGISTER
+========================================================= */
+
+  .register-area {
+    min-height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    background: #161b1e;
+
+    border-top: 1px solid #1e272d;
+
+    color: #929da6;
+
+    font-size: 11px;
+  }
+
+  .register-link {
+    color: #4edea3;
+
+    text-decoration: none;
+
+    font-weight: 600;
+  }
+
+  .register-link:hover {
+    text-decoration: underline;
+  }
+
+  /* =========================================================
+   PORTAL META
+========================================================= */
+
+  .portal-meta {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 27px 8px 0;
+
+    color: #69747d;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.04em;
+  }
+
+  /* =========================================================
+   RESPONSIVE
+========================================================= */
+
+  @media (max-width: 1200px) {
+    .portal-content {
+      grid-template-columns: 1fr;
+
+      gap: 35px;
+    }
+
+    .engineering-panel {
+      min-height: 650px;
+    }
+
+    .login-section {
+      padding: 30px 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .portal {
+      padding: 10px;
+    }
+
+    .portal-frame {
+      border-width: 5px;
+
+      border-radius: 20px;
+
+      padding: 18px;
+    }
+
+    .portal-header {
+      height: auto;
+
+      gap: 15px;
+
+      align-items: flex-start;
+
+      flex-direction: column;
+    }
+
+    .portal-title {
+      white-space: normal;
+
+      flex-wrap: wrap;
+    }
+
+    .header-main {
+      font-size: 11px;
+    }
+
+    .header-divider,
+    .header-sub {
+      display: none;
+    }
+
+    .dark-toggle {
+      align-self: flex-end;
+    }
+
+    .portal-content {
+      display: block;
+    }
+
+    .engineering-panel {
+      min-height: 650px;
+
+      padding: 30px 22px;
+
+      margin-top: 12px;
+    }
+
+    .coordinates,
+    .blueprint-reference {
+      position: static;
+
+      margin-bottom: 15px;
+    }
+
+    .company-brand {
+      margin-top: 15px;
+    }
+
+    .company-brand h2 {
+      font-size: 17px;
+    }
+
+    .hero-heading {
+      font-size: 42px;
+    }
+
+    .telemetry-card {
+      width: 100%;
+    }
+
+    .technical-tags {
+      margin-top: 45px;
+    }
+
+    .login-section {
+      padding: 30px 0 0;
+    }
+
+    .login-heading {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    .login-card form {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    .security-row {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    .register-area {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .portal {
+      padding: 5px;
+    }
+
+    .portal-frame {
+      padding: 12px;
+
+      border-radius: 15px;
+    }
+
+    .engineering-panel {
+      padding: 25px 15px;
+    }
+
+    .hero-heading {
+      font-size: 36px;
+    }
+
+    .hero-description {
+      font-size: 14px;
+    }
+
+    .state-tabs button {
+      font-size: 8px;
+    }
+
+    .login-heading h1 {
+      font-size: 30px;
+    }
+
+    .register-area {
+      flex-direction: column;
+
+      justify-content: center;
+
+      gap: 8px;
+    }
+
+    .portal-meta {
+      flex-direction: column;
+
+      gap: 8px;
+    }
+  }
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  border: none;
+
+  background: #0ea5e9;
+
+  color: #001e2f;
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.sign-in-button:hover {
+  background: #0284c7;
+}
+
+.sign-in-button:active {
+  transform: translateY(1px);
+}
+
+.arrow {
+  font-size: 20px;
+
+  line-height: 0;
+}
+
+/* =========================================================
+   REGISTER
+========================================================= */
+
+.register-area {
+  min-height: 82px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  background: #161b1e;
+
+  border-top: 1px solid #1e272d;
+
+  color: #929da6;
+
+  font-size: 11px;
+}
+
+.register-link {
+  color: #4edea3;
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   PORTAL META
+========================================================= */
+
+.portal-meta {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 27px 8px 0;
+
+  color: #69747d;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+  .portal-content {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .engineering-panel {
+    min-height: 650px;
+  }
+
+  .login-section {
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .portal {
+    padding: 10px;
+  }
+
+  .portal-frame {
+    border-width: 5px;
+
+    border-radius: 20px;
+
+    padding: 18px;
+  }
+
+  .portal-header {
+    height: auto;
+
+    gap: 15px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .portal-title {
+    white-space: normal;
+
+    flex-wrap: wrap;
+  }
+
+  .header-main {
+    font-size: 11px;
+  }
+
+  .header-divider,
+  .header-sub {
+    display: none;
+  }
+
+  .dark-toggle {
+    align-self: flex-end;
+  }
+
+  .portal-content {
+    display: block;
+  }
+
+  .engineering-panel {
+    min-height: 650px;
+
+    padding: 30px 22px;
+
+    margin-top: 12px;
+  }
+
+  .coordinates,
+  .blueprint-reference {
+    position: static;
+
+    margin-bottom: 15px;
+  }
+
+  .company-brand {
+    margin-top: 15px;
+  }
+
+  .company-brand h2 {
+    font-size: 17px;
+  }
+
+  .hero-heading {
+    font-size: 42px;
+  }
+
+  .telemetry-card {
+    width: 100%;
+  }
+
+  .technical-tags {
+    margin-top: 45px;
+  }
+
+  .login-section {
+    padding: 30px 0 0;
+  }
+
+  .login-heading {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .login-card form {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .security-row {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .register-area {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portal {
+    padding: 5px;
+  }
+
+  .portal-frame {
+    padding: 12px;
+
+    border-radius: 15px;
+  }
+
+  .engineering-panel {
+    padding: 25px 15px;
+  }
+
+  .hero-heading {
+    font-size: 36px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .state-tabs button {
+    font-size: 8px;
+  }
+
+  .login-heading h1 {
+    font-size: 30px;
+  }
+
+  .register-area {
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 8px;
+  }
+
+  .portal-meta {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+}
