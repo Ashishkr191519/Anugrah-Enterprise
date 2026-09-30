@@ -72,15 +72,6 @@ const Home = () => {
                   </span> */}
                 </Link>
 
-                <Link
-                  to="/home/request-service"
-                  className="inline-flex items-center justify-center rounded bg-[#ebeef1] px-6 py-3.5 font-['JetBrains_Mono'] text-[12px] font-medium uppercase tracking-wider text-[#181c1e] transition-all hover:bg-[#e0e3e6]"
-                >
-                  Request a Service
-                  {/* <span className="material-symbols-outlined ml-2 text-base">
-                    engineering
-                  </span> */}
-                </Link>
               </div>
 
               {/* Technical indicators */}
@@ -534,7 +525,7 @@ const Home = () => {
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-4">
-                  <Link
+                  {/* <Link
                     to="/home/request-service"
                     className="inline-flex items-center justify-center rounded bg-black px-8 py-4 font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-white transition-all hover:bg-[#386380]"
                   >
@@ -542,7 +533,7 @@ const Home = () => {
                     <span className="material-symbols-outlined ml-2 text-base">
                       <MoveRight />
                     </span>
-                  </Link>
+                  </Link> */}
 
                   <Link
                     to="/home/contact"
