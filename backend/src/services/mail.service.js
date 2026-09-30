@@ -11,15 +11,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Verify the connection configuration
-transporter.verify((error, success) => {
-  if (error) {
-    console.error("Error connecting to email server:", error);
-  } else {
-    console.log("Email server is ready to send messages");
-  }
-});
-
 const sendEmail = async ({ to, subject, html, text }) => {
   const mailOptions = {
     from: `"Anugrah Enterprise" <${process.env.GOOGLE_USER}>`,

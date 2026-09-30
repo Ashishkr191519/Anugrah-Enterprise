@@ -67,7 +67,7 @@ const registerUser = async (req, res) => {
       { expiresIn: "1h" },
     );
 
-    const verificationLink = `http://localhost:3000/api/auth/verify-email?token=${emailVerificationToken}`;
+    const verificationLink = `${process.env.BACKEND_URL}/api/auth/verify-email?token=${emailVerificationToken}`;
 
     await sendEmail({
       to: email,
@@ -222,7 +222,7 @@ const verifyEmail = async (req, res) => {
       </p>
 
       <a
-        href="http://localhost:5173/"
+        href="${process.env.CLIENT_URL}/"
         style="
           display: inline-block;
           margin-top: 20px;
@@ -342,7 +342,13 @@ const getMe = async (req, res) => {
 
 const logout = async (req, res) => {
   try {
-    res.clearCookie("token");
+    res.clearCookie("token", {
+      httpOnly: true,
+
+      secure: process.env.NODE_ENV === "production",
+
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+    });
 
     return res.status(200).json({
       success: true,
@@ -379,7 +385,7 @@ const forgotPassword = async (req, res) => {
 
     await user.save();
 
-    const resetLink = `http://localhost:5173/reset-password?token=${resetToken}`;
+    const resetLink = `${process.env.CLIENT_URL}/reset-password?token=${resetToken}`;
 
     await sendEmail({
       to: user.email,
@@ -556,7 +562,7 @@ const resendVerification = async (req, res) => {
       { expiresIn: "1h" },
     );
 
-    const verificationLink = `http://localhost:3000/api/auth/verify-email?token=${emailVerificationToken}`;
+    const verificationLink = `${process.env.BACKEND_URL}/api/auth/verify-email?token=${emailVerificationToken}`;
 
     await sendEmail({
       to: email,

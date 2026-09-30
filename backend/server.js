@@ -34,13 +34,11 @@ const authLimiter = rateLimit({
   },
 });
 
-let PORT = process.env.PORT;
+
 
 app.use("/api/auth",authLimiter, authRouter);
 app.use("/api", serviceRouter);
 app.use("/api", requestRouter);
 app.use("/api/admin", adminRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+module.exports = app;
